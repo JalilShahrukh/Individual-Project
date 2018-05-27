@@ -1,0 +1,31 @@
+{
+  "name": "individual-project",
+  "version": "1.0.0", 
+  "description": "individual-project", 
+  "scripts": {
+    "start": "node server/server.js"
+  }, 
+  "repository": {
+    "type": "git", 
+    "url": "git+https://github.com/JalilShahrukh/Individual-Project.git"
+  }, 
+  "author": "Shahrukh Jalil <jalilshahrukh@gmail.com>",
+  "license": "ISC", 
+  "bugs": {
+    "url": "https://github.com/JalilShahrukh/Individual-Project/issues"
+  }, 
+  "dependencies": {
+    "react": "^15.0.1",
+    "react-dom": "^16.4.0",
+    "react-redux": "^5.0.7",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-jsx-a11y": "^0.6.2",
+    "eslint-plugin-react": "^4.3.0",
+    "expect": "^1.16.0",
+    "mocha": "^2.4.5",
+    "node-sass": "^4.9.0"
+  }
+}
