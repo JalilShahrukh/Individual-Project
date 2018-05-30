@@ -12,7 +12,33 @@
   margin: 0;
   color: green;
   text-align: center; 
-  width: 100%;  
+  width: 100%;
+  position: relative;   
+}
+
+#Debits { 
+  position: relative;
+  width: 100%; 
+  margin-top: auto;
+  clear: both;
+  overflow: hidden;
+}
+
+#Credits { 
+  position: relative; 
+  width: 100%; 
+  margin: auto; 
+  clear: both;
+}
+
+.appended { 
+  position: relative; 
+  float: left;
+  padding: 10px;
+  margin: 5px;  
+  width: 50px; 
+  height: 50px; 
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .2); 
 }
 
 .innerbox {
@@ -23,5 +49,6 @@
 }
 
 .propsText { 
+  position: relative;
   margin-left: 5px;
 }
