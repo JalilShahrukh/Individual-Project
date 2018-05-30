@@ -16,6 +16,14 @@
   position: relative;   
 }
 
+#Totals { 
+  margin-top: 25px;
+  position: relative;
+  width: 100%; 
+  clear: both;
+  overflow: hidden;
+}
+
 #Debits { 
   position: relative;
   width: 100%; 
