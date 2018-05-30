@@ -13,6 +13,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CounterActions from 'redux'; 
 import { bindActionCreators } from 'redux';
+import Assets from './../components/assets.jsx'; 
 
 /*const mapStateToProps = store => {
  
@@ -33,13 +34,13 @@ const componentDidUpdate = () => {
 class MainContainer extends Component { 
   constructor(props) { 
     super(props); 
-
   }
 
   render() { 
     return ( 
       <div className="container">
         <h1 id="header">The Money Team</h1> 
+        <Assets />
       </div>
     )
   }  
