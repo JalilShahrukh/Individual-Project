@@ -1,17 +1,16 @@
-const http = require('http'); 
-const fs = require('fs');
+const express = require('express'); 
+const app = express(); 
+const fs = require('fs'); 
+var path = require('path');
 
-const server = http.createServer((request, response) => { 
-  if (request.method === 'GET') { 
-    if (request.url === '/') { 
-      response.writeHead(200, {'Content-Type': 'text/html'}); 
-      return response.end(fs.readFileSync(__dirname + '/../client/index.html')); 
-    }//end if 
-  }//end if 
+// app.use(express.static(path.join(__dirname, './../dist/bundle.js'))); 
 
-  response.statusCode = 404;
-  response.end('Cant find what you are looking for.');
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './../client/index.html'));
+}); 
 
-}).listen(3000); 
+app.get('/bundle', (req, res) => {
+  res.sendFile(path.join(__dirname, './../dist/bundle.js'));
+}); 
 
-module.exports = server; 
+app.listen(3005, () => console.log('Example app listening on port 3005!'));

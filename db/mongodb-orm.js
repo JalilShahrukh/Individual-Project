@@ -11,10 +11,10 @@ var schema = new Schema({
 }); 
 
 module.exports = function(data) { 
-  var answers = moongoose.model('answers', schema); 
+  var db = moongoose.model('db', schema); 
 
-  answers.insertMany({}, function(err) { 
+  db.insertMany({}, function(err) { 
     if (err) return err; 
     moongoose.connection.close(); 
-  }); 
+  });
 }; 
