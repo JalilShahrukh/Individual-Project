@@ -39,7 +39,7 @@ class MainContainer extends Component {
   render() { 
     return ( 
       <div className="container">
-        <h1 id="header">Hello</h1> 
+        <h1 id="header">The Money Team</h1> 
       </div>
     )
   }  

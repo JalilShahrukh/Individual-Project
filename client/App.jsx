@@ -24,7 +24,6 @@ class App extends Component {
     return( 
       <div>
         <Wrapper /> 
-        <h1>Hello World</h1>;
       </div>
     )
   }

@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './../client/index.html'));
 }); 
 
+app.get('/style', (req, res) => { 
+  res.sendFile(path.join(__dirname, './../client/style.css')); 
+});
+
 app.get('/bundle', (req, res) => {
   res.sendFile(path.join(__dirname, './../dist/bundle.js'));
 }); 
