@@ -21,7 +21,7 @@ class Credits extends React.Component {
       <div className="innerbox" id="Credits">
         <label htmlFor="credits" class="innerText">Credits:</label>
         <form className="forms"><input type="text" name="name" className="inputs"></input></form>
-        <button className="buttons" id="addCredits">Add</button>
+        <button className="buttons" id="addCredits" onClick={this.props.onClickCredit}>Add</button>
         <br/>
       </div>    
     )    

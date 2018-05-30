@@ -46,12 +46,19 @@ class MainContainer extends Component {
     document.getElementById("Debits").appendChild(node);
   }
 
+  onClickCredit(e) { 
+    var node = document.createElement("div");  
+    node.className = 'appended';
+    node.innerHTML = '$';  
+    document.getElementById("Credits").appendChild(node);
+  }
+
   render() { 
     return ( 
       <div className="container">
         <h1 id="header">The Money Team</h1> 
           <Debits onClick={this.onClick}/>
-          {/* <Credits /> */}
+          <Credits onClickCredit={this.onClickCredit}/>
       </div>
     )
   }  

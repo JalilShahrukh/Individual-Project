@@ -17,19 +17,6 @@ class Debits extends React.Component {
   }
 
   render() { 
-     {/* <div className="checkings">
-     <label htmlFor="checkings">The money you have:</label>
-     <input placeholder="Got money?" form="text"></input>
-     <button id="addCheckings">$</button>
-    </div>  */}
-
-  {/* <span></span> */}
-
-    {/* <div className="savings">  
-      <label htmlFor="savings">:</label>
-      <input placeholder="Got money?" form="text"></input>
-      <button id="addSavings">$</button>
-    </div>   */}
     return ( 
       <div className="innerbox" id="Debits">
         <label htmlFor="debits" class="innerText">Debits:</label>
