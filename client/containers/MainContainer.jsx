@@ -34,22 +34,37 @@ const componentDidUpdate = () => {
 
 class MainContainer extends Component { 
   constructor(props) { 
-    super(props); 
-    this.state = [];
+    super(props);
+    this.state = { 
+      input: '',
+      length: 0,  
+      accounts: []
+    } 
     this.onClick = this.onClick.bind(this);
+    this.onClickCredit = this.onClickCredit.bind(this); 
+    this.handleInput = this.handleInput.bind(this); 
+  }
+
+  handleInput(e) { 
+    // console.log(e.target.value); 
+    this.setState({ 
+      input: e.target.value
+    });
   }
 
   onClick(e) { 
+    // console.log('input', this.state.input); 
     var node = document.createElement("div");  
     node.className = 'appended';
-    node.innerHTML = '$';  
+    node.innerHTML = this.state.input;  
     document.getElementById("Debits").appendChild(node);
   }
 
   onClickCredit(e) { 
+    // console.log('input', this.state.input); 
     var node = document.createElement("div");  
     node.className = 'appended';
-    node.innerHTML = '$';  
+    node.innerHTML = this.state.input;  
     document.getElementById("Credits").appendChild(node);
   }
 
@@ -57,8 +72,8 @@ class MainContainer extends Component {
     return ( 
       <div className="container">
         <h1 id="header">The Money Team</h1> 
-          <Debits onClick={this.onClick}/>
-          <Credits onClickCredit={this.onClickCredit}/>
+          <Debits onClick={this.onClick} handleInput={this.handleInput}/>
+          <Credits onClickCredit={this.onClickCredit} handleInput={this.handleInput}/>
       </div>
     )
   }  
