@@ -32,8 +32,10 @@ class Debits extends React.Component {
     </div>   */}
     return ( 
       <div className="innerbox" id="Debits">
-        <label htmlFor="debits">Debits:</label>  
-        <button className="buttons" id="addDebits" onClick={this.props.onClick}>$</button>
+        <label htmlFor="debits" class="innerText">Debits:</label>
+        <form class="forms"><input type="text" name="name" className="inputs"></input></form>
+        <button className="buttons" id="addDebits" onClick={this.props.onClick}>Add</button>
+        <br/>
       </div>
     )
   }

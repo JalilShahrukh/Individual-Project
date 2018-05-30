@@ -19,8 +19,10 @@ class Credits extends React.Component {
   render() { 
     return( 
       <div className="innerbox" id="Credits">
-        <label htmlFor="credits">Credits:</label>  
-        <button className="buttons" id="addCredits">$</button>
+        <label htmlFor="credits" class="innerText">Credits:</label>
+        <form className="forms"><input type="text" name="name" className="inputs"></input></form>
+        <button className="buttons" id="addCredits">Add</button>
+        <br/>
       </div>    
     )    
   }

@@ -40,10 +40,9 @@ class MainContainer extends Component {
   }
 
   onClick(e) { 
-    console.log('Hello');
     var node = document.createElement("div");  
     node.className = 'appended';
-    node.innerHTML = 'hello';  
+    node.innerHTML = '$';  
     document.getElementById("Debits").appendChild(node);
   }
 
@@ -52,7 +51,7 @@ class MainContainer extends Component {
       <div className="container">
         <h1 id="header">The Money Team</h1> 
           <Debits onClick={this.onClick}/>
-          <Credits />
+          {/* <Credits /> */}
       </div>
     )
   }  
