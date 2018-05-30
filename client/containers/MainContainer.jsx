@@ -16,6 +16,7 @@ import { bindActionCreators } from 'redux';
 import Debits from './../components/debits.jsx';
 import Credits from './../components/credits.jsx'; 
 import Totals from './../components/totals.jsx';
+import Predictor from './../components/predictor.jsx'; 
 
 /*const mapStateToProps = store => {
  
@@ -39,11 +40,19 @@ class MainContainer extends Component {
     this.state = {
       total: 0, 
       input: '',
-      accounts: []
+      days: 0, 
+      price: 0, 
+      name: '',
+      willSpend: '' 
     } 
     this.onClick = this.onClick.bind(this);
     this.onClickCredit = this.onClickCredit.bind(this); 
     this.handleInput = this.handleInput.bind(this); 
+
+    this.onClickPredictor = this.onClickPredictor.bind(this); 
+    this.handleDaysChange = this.handleDaysChange.bind(this); 
+    this.handlePriceChange = this.handlePriceChange.bind(this); 
+    this.handleNameChange = this.handleNameChange.bind(this); 
   }
 
   handleInput(e) { 
@@ -51,6 +60,18 @@ class MainContainer extends Component {
     this.setState({ 
       input: e.target.value
     });
+  }
+
+  handlePriceChange (e) {
+    this.setState({ price: e.target.value });
+  }
+
+  handleDaysChange (e) {
+    this.setState({ days: e.target.value });
+  }
+
+  handleNameChange (e) {
+    this.setState({ name: e.target.value });
   }
 
   onClick(e) {
@@ -81,6 +102,16 @@ class MainContainer extends Component {
     // console.log('Credit', this.state.total);
   }
 
+  onClickPredictor(e) { 
+    if (this.state.name === '' || this.state.price < 1 || this.state.days < 1) return; 
+    var node = document.createElement("div");  
+    node.className = 'appended';
+    let product = this.state.days * this.state.price; 
+    let output = "Over the next " + this.state.days + " days you will spend $" + product + " on " + this.state.name; 
+    node.innerHTML = output;  
+    document.getElementById("Predictor").appendChild(node);
+  }
+
   render() { 
     return ( 
       <div className="container">
@@ -88,6 +119,7 @@ class MainContainer extends Component {
           <Totals totals={this.state.total} /> 
           <Debits onClick={this.onClick} handleInput={this.handleInput}/>
           <Credits onClickCredit={this.onClickCredit} handleInput={this.handleInput}/>
+          <Predictor onClickPred={this.onClickPredictor} hPC={this.handlePriceChange} hDC={this.handleDaysChange} hNC={this.handleNameChange}/>
       </div>
     )
   }  

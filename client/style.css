@@ -19,7 +19,7 @@
 #Totals { 
   margin-top: 25px;
   position: relative;
-  width: 100%; 
+  width: auto; 
   clear: both;
   overflow: hidden;
 }
@@ -59,6 +59,12 @@
   margin-top: 25px; 
   clear: both;
   overflow: hidden;
+}
+
+#Predictor { 
+  position: relative; 
+  overflow: hidden;
+  clear: both;
 }
 
 .appended {
